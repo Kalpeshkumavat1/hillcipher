@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Fitness Tracker</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+    <div class="wrapper">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{{ url_for('home') }}">Fitness Tracker</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('log_workout') }}">Log Workout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('nutrition') }}">Nutrition</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('progress') }}">Progress</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('goals') }}">Goals</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('bmi') }}">BMI</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('fat') }}">Fat(%)</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('login') }}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Add your page content here -->
+    <div class="container mt-4">
+        {% block body %}
+        {% endblock %}
+    </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2 class="logo-text">MyProfile</h2>
+                <p>
+                    Your one-stop solution for personalized workout and diet plans, BMI reports, and body fat percentage
+                    tracking.
+                </p>
+                <div class="contact">
+                    <span><i class="fas fa-phone"></i> &nbsp; +91 1234568789</span>
+                    <span><i class="fas fa-envelope"></i> &nbsp; kalpesh@my.com</span>
+                </div>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <br>
+                <ul>
+                    <a href="#">
+                        <li>Events</li>
+                    </a>
+                    <a href="#">
+                        <li>About</li>
+                    </a>
+                    <a href="#">
+                        <li>Contact</li>
+                    </a>
+                    <a href="#">
+                        <li>Privacy Policy</li>
+                    </a>
+                </ul>
+            </div>
+            
+            <div class="footer-section contact-form">
+                <h2>Contact us</h2>
+                <br>
+                <form action="/" method="post">
+                    <input type="email" name="email" class="text-input contact-input"
+                    placeholder="Your email address...">
+                    <textarea name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
+                    <button type="submit" class="btn btn-big contact-btn">
+                        <i class="fas fa-envelope"></i>
+                        Send
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; myprofile.com | Designed by MyProfile Team
+        </div>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

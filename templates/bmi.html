@@ -1,0 +1,61 @@
+{%extends 'home.html'%}
+{%block body%}
+<div class="container mt-5">
+    <h2 class="text-center">BMI Categories</h2>
+    <table class="table table-bordered bmi-table">
+        <thead>
+            <tr>
+                <th scope="col">BMI</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>≤ 18.4</td>
+                <td class="underweight">Underweight</td>
+            </tr>
+            <tr>
+                <td>18.5 - 24.9</td>
+                <td class="normal">Normal</td>
+            </tr>
+            <tr>
+                <td>25.0 - 39.9</td>
+                <td class="overweight">Overweight</td>
+            </tr>
+            <tr>
+                <td>≥ 40.0</td>
+                <td class="obese">Obese</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="container mt-5">
+    <h2 class="text-center">BMI Calculator</h2>
+    <form id="bmiForm" class="bmi-form" action="/bmi" method="post">
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" class="form-control" id="age" name="age" required>
+        </div>
+        <div class="form-group">
+            <label for="weight">Weight (kg)</label>
+            <input type="number" class="form-control" id="weight" name="weight" step="0.1" required>
+        </div>
+        <div class="form-group">
+            <label for="height">Height (cm)</label>
+            <input type="number" class="form-control" id="height" name="height" step="0.1" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Calculate BMI</button>
+    </form>
+</div>
+<div class="container mt-5">
+    <h2 class="text-center">Your BMI Result</h2>
+    <div class="bmi-result-card card">
+        <div class="card-body text-center">
+            <h4>Your BMI is:</h4>
+            <h1 class="bmi-value">{{ val }}</h1>
+            <p class="bmi-category">{{ category }}</p>
+            <a href="{{ url_for('bmi') }}" class="btn btn-primary mt-3">Calculate Again</a>
+        </div>
+    </div>
+</div>
+{%endblock%}

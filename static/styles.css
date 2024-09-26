@@ -1,0 +1,306 @@
+/* General styles for the entire page */
+body {
+    background-color: #343a40; /* Dark background */
+    color: #f8f9fa; /* Light text color */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Ensure the footer stays at the bottom */
+.wrapper {
+    flex: 1;
+}
+
+/* General styles for the navbar */
+.navbar {
+    background: linear-gradient(90deg, #343a40 0%, #23272b 100%); /* Gradient background */
+    border-bottom: 2px solid #f8c102; /* Yellow bottom border */
+}
+
+.navbar-brand,
+.nav-link {
+    color: #ffffff !important; /* White text color */
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: #f8c102 !important; /* Yellow color on hover */
+}
+
+/* Styles for the active link */
+.nav-item.active .nav-link {
+    font-weight: bold;
+    color: #f8c102 !important; /* Yellow color for the active link */
+}
+
+/* Add padding and margins for better spacing */
+.navbar-nav .nav-item {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+/* Mobile view styles */
+@media (max-width: 992px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 0.5rem 0;
+    }
+}
+
+/* Additional styles */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' linecap='round' linejoin='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-collapse {
+    justify-content: space-between;
+}
+
+/* General styles for the form */
+.bmi-form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #495057; /* Slightly lighter dark background */
+    color: #f8f9fa; /* Light text color */
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.bmi-form .form-group label {
+    font-weight: bold;
+}
+
+.bmi-form .form-control {
+    background-color: #343a40; /* Dark input background */
+    color: #f8f9fa; /* Light text color */
+    border: 1px solid #495057; /* Border color */
+    border-radius: 0.25rem;
+}
+
+.bmi-form .form-control::placeholder {
+    color: #adb5bd; /* Placeholder text color */
+}
+
+.bmi-form .btn {
+    background-color: #f8c102; /* Yellow background color */
+    border: none;
+    color: #343a40; /* Dark text color */
+}
+
+.bmi-form .btn:hover {
+    background-color: #e0a800; /* Darker yellow background color on hover */
+    color: #ffffff; /* White text color on hover */
+}
+
+/* Responsive styling for the form */
+@media (max-width: 576px) {
+    .bmi-form {
+        padding: 1rem;
+    }
+}
+
+/* General styles for the BMI result card */
+.bmi-result-card {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #495057; /* Slightly lighter dark background */
+    color: #f8f9fa; /* Light text color */
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.bmi-result-card h4 {
+    font-weight: bold;
+}
+
+.bmi-result-card .bmi-value {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #f8c102; /* Yellow color */
+}
+
+.bmi-result-card .bmi-category {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.bmi-result-card .btn {
+    background-color: #f8c102; /* Yellow background color */
+    border: none;
+    color: #343a40; /* Dark text color */
+}
+
+.bmi-result-card .btn:hover {
+    background-color: #e0a800; /* Darker yellow background color on hover */
+    color: #ffffff; /* White text color on hover */
+}
+
+/* Responsive styling for the BMI result card */
+@media (max-width: 576px) {
+    .bmi-result-card {
+        padding: 1rem;
+    }
+    .bmi-result-card .bmi-value {
+        font-size: 2.5rem;
+    }
+}
+
+/* General styles for the table */
+.bmi-table th, .bmi-table td {
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.bmi-table th {
+    background-color: #495057; /* Slightly lighter dark background */
+    color: #f8f9fa; /* Light text color */
+}
+
+.bmi-table td {
+    padding: 1rem;
+    color: #f8f9fa; /* Light text color */
+}
+
+/* Specific styles for different BMI categories */
+.bmi-table .underweight {
+    background-color: #ffeb99; /* Light yellow */
+}
+
+.bmi-table .normal {
+    background-color: #d4edda; /* Light green */
+}
+
+.bmi-table .overweight {
+    background-color: #ffeeba; /* Light orange */
+}
+
+.bmi-table .obese {
+    background-color: #f8d7da; /* Light red */
+}
+.bmi-table .obe {
+    background-color: #feadb4; /* Light red */
+}
+
+/* Responsive styling for the table */
+@media (max-width: 576px) {
+    .bmi-table td {
+        padding: 0.5rem;
+    }
+}
+
+/* Footer styles */
+.footer {
+    background: #333;
+    color: #fff;
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+    margin-top: auto; /* Push the footer to the bottom */
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 20px;
+    min-width: 250px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.contact span {
+    display: block;
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.socials a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+}
+
+.links ul {
+    list-style: none;
+}
+
+.links ul a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin: 10px 0;
+    transition: 0.3s;
+}
+
+.links ul a:hover {
+    color: #4CAF50;
+    padding-left: 10px;
+}
+
+.contact-form .text-input {
+    background: #333;
+    border: 1px solid #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    color: #fff;
+}
+
+.contact-form .contact-btn {
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form .contact-btn:hover {
+    background: #45a049;
+}
+
+.footer-bottom {
+    background: #222;
+    color: #fff;
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+}

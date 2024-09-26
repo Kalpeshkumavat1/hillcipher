@@ -1,0 +1,67 @@
+{%extends 'home.html'%}
+{%block extra_css%}
+<link rel="stylesheet" href="{{url_for('static',filename='chest.css')}}">
+{%endblock%}
+{%block body%}
+<div class="main">
+    <div class="chest">
+        <div>
+            <img src="static/img/shoulderpress.jpg" alt="">
+        </div>
+        <div class="text">
+            Shoulder Press
+        </div>
+    </div>
+    <div class="chest">
+        <div>
+            <img src="static/img/barbell_shoulder.jpg" alt="">
+        </div>
+        <div class="text">
+            Barbell Shoulder Press
+        </div>
+    </div>
+</div>
+<div class="main">
+    <div class="chest">
+        <div>
+            <img src="static/img/Lateral_Raise.jpg" alt="">
+        </div>
+        <div class="text">
+            Dumbell Lateral Raises
+        </div>
+    </div>
+    <div class="chest">
+        <div>
+            <img src="static/img/front_raise.jpg" alt="">
+        </div>
+        <div class="text">
+            Front Raises
+        </div>
+    </div>
+</div>
+<div class="main">
+    <div class="chest">
+        <div>
+            <img src="static/img/face-pull.jpg" alt="">
+        </div>
+        <div class="text">
+            Face Pull
+        </div>
+    </div>
+    <div class="chest">
+        <div>
+            <img src="static/img/shrugs.jpg" alt="">
+        </div>
+        <div class="text">
+            Shrugs
+        </div>
+    </div>
+</div>
+<div class="button-container">
+    <a href="log_workout"> 
+    <button class="circle-button">
+        <span class="arrow">&larr;</span>
+    </button>
+    </a>
+</div>
+{%endblock%}

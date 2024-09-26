@@ -1,0 +1,39 @@
+{%extends 'home.html'%}
+{%block extra_css%}
+<link rel="stylesheet" href="{{url_for('static',filename='index.css')}}">
+{%endblock%}
+{%block body%}
+
+<div class="home-container">
+    <div class="box workout-plan">
+        <!-- <a href="{{url_for('log_workout')}}"><h2>Workout Plan</h2></a> -->
+        <a href="/chest_workout"><h2>Chest WorkOut</h2></a>
+        <p>Your customized workout plan goes here.</p>
+    </div>
+    <div class="box diet-plan">
+        <!-- <a href="{{url_for('nutrition')}}"><h2>Diet Plan</h2></a> -->
+        <a href="/triceps_workout"><h2>Triceps WorkOut</h2></a>
+        <p>Your customized workout plan goes here.</p>
+    </div>
+    <div class="box bmi-report">
+        <!-- <a href="{{url_for('bmi')}}"><h2>BMI Report</h2></a> -->
+        <a href="/back_workout"><h2>Back WorkOut</h2></a>
+        <p>Your customized workout plan goes here.</p>
+    </div>
+    <div class="box fat-percentage">
+        <!-- <a href="{{url_for('fat')}}"><h2>Fat Percentage</h2></a> -->
+        <a href="/biceps_workout"><h2>Biceps WorkOut</h2></a>
+        <p>Your customized workout plan goes here.</p>
+    </div>
+    <div class="box fat-percentage">
+        <!-- <a href="{{url_for('fat')}}"><h2>Fat Percentage</h2></a> -->
+        <a href="/leg_workout"><h2>Legs WorkOut</h2></a>
+        <p>Your customized workout plan goes here.</p>
+    </div>
+    <div class="box fat-percentage">
+        <!-- <a href="{{url_for('fat')}}"><h2>Fat Percentage</h2></a> -->
+        <a href="/shoulder_workout"><h2>Shoulder WorkOut</h2></a>
+        <p>Your customized workout plan goes here.</p>
+    </div>
+</div>
+{%endblock%}
