@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+            height: 100vh;
+            margin: 0;
+            background-color: #171717;
+        }
+
+        .matrix-container0 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* 2 columns with 100px width */
+            /* grid-template-rows: repeat(2, 100px); */
+            /* 2 rows with 100px height */
+            gap: 10px;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .matrix-container1 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            /* 2 columns with 100px width */
+            /* grid-template-rows: repeat(2, 100px); */
+            /* 2 rows with 100px height */
+            gap: 10px;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .matrix-container2 {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            /* 2 columns with 100px width */
+            /* grid-template-rows: repeat(2, 100px); */
+            /* 2 rows with 100px height */
+            gap: 10px;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .matrix-container3 {
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            /* 2 columns with 100px width */
+            /* grid-template-rows: repeat(2, 100px); */
+            /* 2 rows with 100px height */
+            gap: 10px;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .matrix-container110 {
+            width: 145px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* 2 columns with 100px width */
+            /* grid-template-rows: repeat(2, 100px); */
+            /* 2 rows with 100px height */
+            gap: 10px;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .matrix-container111 {
+            width: 200px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            /* 2 columns with 100px width */
+            /* grid-template-rows: repeat(2, 100px); */
+            /* 2 rows with 100px height */
+            gap: 10px;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .matrix-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #007BFF;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 15px;
+            width: 50px;
+        }
+
+        .newone {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            /* Spacing between each matrix row */
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
+            box-shadow: rgba(196, 193, 193, 0.4) 0px 2px 4px, rgba(255, 254, 254, 0.3) 0px 7px 13px -3px, rgba(253, 251, 251, 0.2) 0px -3px 0px inset;
+            margin: 20px 20px;
+        }
+
+        .newone div:nth-child(2),
+        /* This targets the × symbol */
+        .newone div:nth-child(4) {
+            /* This targets the = symbol */
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 10px;
+            /* Space between matrices and symbols */
+        }
+
+        #old {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            gap: 20px;
+            /* background-color: #000; */
+        }
+
+        #new {
+            width: 100%;
+            height: 100vh;
+            background-color: #212121;
+            padding-top: 10px;
+            color: #ddd;
+        }
+
+        h1 {
+            padding-left: 20px;
+        }
+
+        .name {
+            margin-left: 50px;
+            padding-left: 100px;
+            width: 500px;
+            height: 500px;
+            background-color: #212121;
+            color: #ddd;
+            border-radius: 40px;
+            /* margin-top: 200px; */
+            margin-bottom: 50px;
+            box-shadow: rgba(229, 232, 235, 0.4) 0px 0px 0px 2px, rgba(229, 232, 235, 0.4) 0px 4px 6px -1px, rgba(229, 232, 235, 0.4) 0px 1px 0px inset;
+        }
+
+        .eq {
+            width: 500px;
+            height: 500px;
+            padding-right: 270px;
+            margin-right: 50px;
+            background-color: #212121;
+            color: #ddd;
+            border-radius: 40px;
+            margin-bottom: 50px;
+            box-shadow: rgba(229, 232, 235, 0.4) 0px 0px 0px 2px, rgba(229, 232, 235, 0.4) 0px 4px 6px -1px, rgba(229, 232, 235, 0.4) 0px 1px 0px inset;
+        }
+
+        input {
+            width: 350px;
+            height: 25px;
+            font-size: 20px;
+        }
+
+        button {
+            margin-top: 20px;
+            width: 150px;
+            height: 40px;
+            font-size: 20px;
+            border-radius: 40px;
+        }
+
+        button:active {
+            transform: scale(0.90);
+        }
+
+        h3 {
+            font-size: 25px;
+        }
+
+        .space {
+            margin-top: 80px;
+        }
+
+        .solution {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            font-size: 25px;
+            color: #ddd;
+            /* background-color: #000; */
+            margin-left: 20px;
+            margin-right: 20px;
+
+        }
+
+        .newthree {
+            border: 2px solid #333;
+            /* Add a border around the newtwo div */
+            padding: 20px;
+            margin: 20px 0;
+            background-color: #f9f9f9;
+            /* Light background for visibility */
+            border-radius: 10px;
+            /* Rounded corners */
+        }
+
+        .newtwo {
+            border: 2px solid #333;
+            /* Add a border around the newtwo div */
+            padding: 20px;
+            margin: 20px 0;
+            background-color: #f9f9f9;
+            /* Light background for visibility */
+            border-radius: 10px;
+            /* Rounded corners */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .newtwo h3 {
+            font-family: Arial, sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .newthree h3 {
+            font-family: Arial, sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        #sol {
+            margin-left: 20px;
+            margin-right: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 2px solid #333;
+            /* Add a border around the newtwo div */
+            padding: 20px;
+            margin: 20px 0;
+            background-color: #f9f9f9;
+            /* Light background for visibility */
+            border-radius: 10px;
+
+            & h3 {
+                font-family: Arial, sans-serif;
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+                color: #333;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="old">
+        <div class="name">
+            <form action="">
+                <div class="space">
+                    <h3>Enter the Key:</h3>
+                    <input type="text" id="key">
+                </div>
+                <div>
+                    <h3>Enter the plain text:</h3>
+                    <input type="text" id="plain">
+                </div>
+                <div>
+                    <label for="">Encryption</label>
+                    <input type="radio" name="hello" id="en" checked>
+                    <label for="">Decryption</label>
+                    <input type="radio" name="hello" id="de">
+                </div>
+                <div>
+                    <button type="submit" id="submit">Submit</button>
+                    <button type="reset" style="margin-left: 40px;">Reset</button>
+                </div>
+            </form>
+        </div>
+        <div class="eq">
+            <h1>This Equation for slove this HILL CIPHER</h1>
+            <img src="public/eqution.png" style="padding-left:20px; padding-top:20px;">
+        </div>
+    </div>
+    <div id="new"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"></script>
+    <script>
+        document.getElementById("submit").addEventListener("click", getvalue);
+        function getvalue() {
+            const encrypt = document.getElementById('en');
+            const decrypt = document.getElementById('de');
+            if (encrypt.checked) {
+                encryption(event);
+            }
+            else {
+                decryption(event);
+            }
+        }
+        async function encryption(event) {
+            event.preventDefault();
+            const key = document.getElementById("key").value;
+            const plaintext = document.getElementById("plain").value;
+            const response = await axios.post("http://localhost:3000/encryption", {
+                key: key,
+                plaintext: plaintext
+            })
+            let keyarray = "";
+            for (let i = 0; i < (response.data.keyarr).length; i++) {
+                for (let j = 0; j < (response.data.keyarr[i]).length; j++) {
+                    keyarray += `<span class="matrix-item">${response.data.keyarr[i][j]}</span>`;
+                }
+            }
+            if ((response.data.keyarr).length <= 2) {
+                count = 0;
+            }
+            else {
+                count = 1;
+            }
+            const newdiv = document.getElementById("new");
+            newdiv.innerHTML = `<h1>Solution:</h1>
+            <div id="sol">
+                <h3>key matrix</h3>
+                <h3>&times;</h3>
+                <h3>plaintext matrix</h3>
+                <h3>=</h3>
+                <h3>answer</h3>
+                <h3>charanswer</h3>
+            </div>`;
+            for (let i = 0; i < (response.data.answer).length; i++) {
+                const newone = document.createElement("div");
+                newone.setAttribute("class", "newone");
+                const div1 = document.createElement("div");
+                div1.setAttribute("class", `matrix-container${count}`)
+                div1.innerHTML = `${keyarray}`
+                newone.appendChild(div1);
+                const div2 = document.createElement("div");
+                div2.innerHTML = `&times;`
+                div2.style.color = 'black';
+                newone.appendChild(div2);
+                const div3 = document.createElement("div");
+                div3.setAttribute("class", `matrix-container${count + 2}`)
+                let plaintextarray = "";
+                for (let k = 0; k < (response.data.plaintextarr[i]).length; k++) {
+                    plaintextarray += `<span class="matrix-item">${response.data.plaintextarr[i][k]}</span>`;
+                }
+                div3.innerHTML = `${plaintextarray}`
+                newone.appendChild(div3);
+                const div4 = document.createElement("div");
+                div4.innerHTML = `=`
+                div4.style.color = 'black';
+                newone.appendChild(div4);
+                const div5 = document.createElement("div");
+                div5.setAttribute("class", `matrix-container${count + 2}`)
+                let answerarray = "";
+                for (let k = 0; k < (response.data.answer[i]).length; k++) {
+                    answerarray += `<span class="matrix-item">${response.data.answer[i][k]}</span>`;
+                }
+                div5.innerHTML = `${answerarray}`
+                newone.appendChild(div5);
+
+                const div6 = document.createElement("div");
+                div6.setAttribute("class", `matrix-container${count + 2}`)
+                let chararray = "";
+                for (let k = 0; k < (response.data.charanswer[i]).length; k++) {
+                    chararray += `<span class="matrix-item">${response.data.charanswer[i][k]}</span>`;
+                }
+                div6.innerHTML = `${chararray}`
+                newone.appendChild(div6);
+                newdiv.appendChild(newone);
+            }
+            const final = document.createElement("div");
+            final.setAttribute("class", "solution");
+            const p = document.createElement("p");
+            p.innerHTML = `This is encryption of given input : ${response.data.final}`;
+            final.appendChild(p);
+            newdiv.appendChild(final);
+        }
+        async function decryption(event) {
+            event.preventDefault();
+            console.log("hello");
+            const key = document.getElementById("key").value;
+            const plaintext = document.getElementById("plain").value;
+            const response = await axios.post("http://localhost:3000/decryption", {
+                key: key,
+                plaintext: plaintext
+            })
+            let keyarray = "";
+            console.log(response.data.keyarr);
+            for (let i = 0; i < (response.data.keyarr).length; i++) {
+                for (let j = 0; j < (response.data.keyarr[i]).length; j++) {
+                    keyarray += `<span class="matrix-item">${response.data.keyarr[i][j]}</span>`;
+                }
+            }
+            if ((response.data.keyarr).length <= 2) {
+                count = 0;
+            }
+            else {
+                count = 1;
+            }
+            const newdiv = document.getElementById("new");
+            newdiv.innerHTML = `<h1>Solution:</h1>`;
+            const newthree = document.createElement("div");
+            newthree.setAttribute("class", "newthree");
+            const newtwo = document.createElement("div");
+            newtwo.setAttribute("class", "newtwo");
+            const text1 = document.createElement("h3");
+            text1.innerHTML = "this is key matrix : "
+            newthree.appendChild(text1);
+            const divkey = document.createElement("div");
+            divkey.setAttribute("class", `matrix-container11${count}`)
+            divkey.innerHTML = `${keyarray}`
+            newthree.appendChild(divkey);
+            const text2 = document.createElement("h3");
+            text2.innerHTML = `this is determinat: ${response.data.det}`
+            newthree.appendChild(text2);
+            if (response.data.inversedet != -1) {
+                const text3 = document.createElement("h3");
+                text3.innerHTML = `this is inverse of determinat : ${response.data.inversedet}`
+                newthree.appendChild(text3);
+                newdiv.appendChild(newthree)
+                const newfour = document.createElement("div");
+                newfour.setAttribute("id", "sol");
+
+                const keyMatrix = document.createElement("h3");
+                keyMatrix.innerHTML = "Adj Matrix";
+                newfour.appendChild(keyMatrix);
+                const multiplicationSymbol = document.createElement("h3");
+                multiplicationSymbol.innerHTML = "&times;";
+                newfour.appendChild(multiplicationSymbol)
+                const plaintextMatrix = document.createElement("h3");
+                plaintextMatrix.innerHTML = "Inverse Determinant";
+                newfour.appendChild(plaintextMatrix)
+                const equalsSymbol = document.createElement("h3");
+                equalsSymbol.innerHTML = "=";
+                newfour.appendChild(equalsSymbol)
+                const answer = document.createElement("h3");
+                answer.innerHTML = "answer";
+                newfour.appendChild(answer)
+                newdiv.appendChild(newfour)
+                let adjmatrix = "";
+                for (let i = 0; i < (response.data.adjmat).length; i++) {
+                    for (let j = 0; j < (response.data.adjmat[i]).length; j++) {
+                        adjmatrix += `<span class="matrix-item">${response.data.adjmat[i][j]}</span>`;
+                    }
+                }
+                const div1 = document.createElement("div");
+                div1.setAttribute("class", `matrix-container${count}`)
+                div1.innerHTML = `${adjmatrix}`
+                newtwo.appendChild(div1);
+                const div2 = document.createElement("div");
+                div2.innerHTML = `&times;`
+                div2.style.color = 'black';
+                newtwo.appendChild(div2);
+                const div3 = document.createElement("div");
+                div3.setAttribute("class", `matrix-item`)
+                div3.innerHTML = `${response.data.inversedet}`
+                newtwo.appendChild(div3);
+                const div4 = document.createElement("div");
+                div4.innerHTML = `=`
+                div4.style.color = 'black';
+                newtwo.appendChild(div4);
+                const div5 = document.createElement("div");
+                div5.setAttribute("class", `matrix-container${count}`)
+                let realkeyarray = "";
+                for (let i = 0; i < (response.data.realkeyarr).length; i++) {
+                    for (let j = 0; j < (response.data.realkeyarr[i]).length; j++) {
+                        realkeyarray += `<span class="matrix-item">${response.data.realkeyarr[i][j]}</span>`;
+                    }
+                }
+                div5.innerHTML = `${realkeyarray}`
+                newtwo.appendChild(div5);
+                newdiv.appendChild(newtwo);
+                const newfive = document.createElement("div");
+                newfive.innerHTML = `
+                <div id="sol">
+                    <h3>Final key Matrix</h3>
+                    <h3>&times;</h3>
+                    <h3>Cipher matrix</h3>
+                    <h3>=</h3>
+                    <h3>answer</h3>
+                    <h3>charanswer</h3>
+                </div>`;
+
+                newdiv.appendChild(newfive);
+                for (let i = 0; i < (response.data.answer).length; i++) {
+                    const newone = document.createElement("div");
+                    newone.setAttribute("class", "newone");
+                    const div1 = document.createElement("div");
+                    div1.setAttribute("class", `matrix-container${count}`)
+                    div1.innerHTML = `${realkeyarray}`
+                    newone.appendChild(div1);
+                    const div2 = document.createElement("div");
+                    div2.innerHTML = `&times;`
+                    div2.style.color = 'black';
+                    newone.appendChild(div2);
+                    const div3 = document.createElement("div");
+                    div3.setAttribute("class", `matrix-container${count + 2}`)
+                    let ciphertextarray = "";
+                    for (let k = 0; k < (response.data.ciphertextarr[i]).length; k++) {
+                        ciphertextarray += `<span class="matrix-item">${response.data.ciphertextarr[i][k]}</span>`;
+                    }
+                    div3.innerHTML = `${ciphertextarray}`
+                    newone.appendChild(div3);
+                    const div4 = document.createElement("div");
+                    div4.innerHTML = `=`
+                    div4.style.color = 'black';
+                    newone.appendChild(div4);
+                    const div5 = document.createElement("div");
+                    div5.setAttribute("class", `matrix-container${count + 2}`)
+                    let answerarray = "";
+                    for (let k = 0; k < (response.data.answer[i]).length; k++) {
+                        answerarray += `<span class="matrix-item">${response.data.answer[i][k]}</span>`;
+                    }
+                    div5.innerHTML = `${answerarray}`
+                    newone.appendChild(div5);
+
+                    const div6 = document.createElement("div");
+                    div6.setAttribute("class", `matrix-container${count + 2}`)
+                    let chararray = "";
+                    for (let k = 0; k < (response.data.charanswer[i]).length; k++) {
+                        chararray += `<span class="matrix-item">${response.data.charanswer[i][k]}</span>`;
+                    }
+                    div6.innerHTML = `${chararray}`
+                    newone.appendChild(div6);
+                    newdiv.appendChild(newone);
+                }
+                const final = document.createElement("div");
+                final.setAttribute("class", "solution");
+                const p = document.createElement("p");
+                p.innerHTML = `This is encryption of given input : ${response.data.final}`;
+                final.appendChild(p);
+                newdiv.appendChild(final);
+            }
+            else {
+                const text3 = document.createElement("h3");
+                text3.innerHTML = "Inverse of determinat is not exist:"
+                newdiv.appendChild(text3);
+            }
+        }
+    </script>
+</body>
+
+</html>
